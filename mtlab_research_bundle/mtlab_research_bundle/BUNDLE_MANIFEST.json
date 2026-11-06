@@ -1,0 +1,37 @@
+{
+  "project": "MTLab research add-on",
+  "created_for": "Existing Windows MTLab repository using uv, MGIZA++, and MLflow",
+  "components": [
+    "MGIZA++ Python orchestration for IBM1, IBM2, HMM, IBM3, IBM4, IBM5",
+    "Optional NLTK pure-Python IBM4/IBM5 reference training",
+    "Phrase extraction and grow-diag-final-and symmetrization",
+    "Phrase translation table with lexical features and Kneser-Ney LM",
+    "Coverage-stack phrase-based decoder with distance distortion",
+    "GRU/LSTM with Bahdanau or Luong attention",
+    "Encoder-decoder Transformer NMT",
+    "SacreBLEU BLEU, chrF++, TER, optional official FLORES spBLEU and COMET",
+    "MLflow experiment tracking and presentation plots"
+  ],
+  "smoke_tests": {
+    "nltk_ibm4_ibm5_toy_training": "passed",
+    "phrase_extraction_and_decode_both_directions": "passed",
+    "gru_lstm_transformer_forward_backward_and_greedy_decode": "passed",
+    "sentencepiece_and_streaming_nmt_one_epoch": "passed",
+    "phrase_training_and_decoding_script_wiring_with_mocked_mlflow": "passed",
+    "translation_evaluation_wiring_with_mocked_metrics": "passed",
+    "plot_export": "passed",
+    "python_compile_all_files": "passed"
+  },
+  "not_claimed_as_tested": [
+    "MGIZA++ Windows executable training against the user's actual Samanantar corpus",
+    "SacreBLEU scoring against the user's actual FLORES files in this isolated environment",
+    "COMET model download and inference",
+    "full-corpus runtime and RAM usage"
+  ],
+  "not_included_yet": [
+    "Hiero/SCFG chart decoder",
+    "Factored SMT with morphological/POS factors",
+    "Syntax-based SMT and SAMT",
+    "OSM and full lexicalized MSD reordering"
+  ]
+}
